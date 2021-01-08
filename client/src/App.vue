@@ -1,33 +1,39 @@
 <template>
-  <img alt="Vu.e logo" src="./assets/logo.png" />
-  <HelloWorld v-bind:message="message" v-bind:request="request"/>
+  <div id='root'>
+    <div id='nav'>
+      <router-link to='/'> Home</router-link>
+      <router-link to='/contact'> Contact </router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import axios from 'axios'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
-  data(){
-    var message = "Hello Vue 3.0 + Vite"
-    var request = "Request from API"
-    return {
-      request
-    }
-  },
-  methods: {
-
-  },
-  mounted(){
-    console.log('Component mounted')
-    var response = axios.get('http://localhost:5000/user/69').then((response) => {
-        console.log(response.data)
-        this.request = response.data.message
-    })
-  }
 }
 </script>
+
+<style scoped>
+  #root {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  img {
+    width: 200px;
+  }
+  #nav {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+  a {
+    text-decoration: none;
+    margin: 30px 25px;
+    color: #333;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: black
+  }
+</style>

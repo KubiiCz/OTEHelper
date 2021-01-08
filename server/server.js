@@ -27,7 +27,7 @@ app.get("/users", cors(), (req, res) => {
 // simple route
 app.get("/user/:id", cors(), (req, res) => {
     console.log(req.params)
-    var message = JSON.stringify(req.params.id)
+    var message = req.params.id
     res.json({ message: message});
   });
 

@@ -1,6 +1,8 @@
 <template>
-    <div>
-
+    <div class="files component-wrapper">
+        <h3>Zdrojové soubory...</h3>
+        <a href="#">.csv</a>
+        <a href="#">.xml</a>
     </div>
 </template>
 

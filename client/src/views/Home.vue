@@ -1,15 +1,27 @@
 <template>
-<MessageComp v-bind:request="request"/>
+    <div class="grid-container-content home">
+        <Files />
+        <UploadForm />
+        <Help />
+        <Preview />
+    </div>
 </template>
 
 <script>
-import MessageComp from '../components/MessageComp.vue'
+import Files from '../components/Files.vue'
+import Help from '../components/Help.vue'
+import Preview from '../components/Preview.vue'
+import UploadForm from '../components/UploadForm.vue'
+
 import axios from 'axios'
 
 export default {
     name: 'Home',
     components: {
-        MessageComp,
+        Preview,
+        Files,
+        Help,
+        UploadForm,
         },
     data(){
         var request = "Request from API"

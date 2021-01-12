@@ -1,39 +1,45 @@
 <template>
-  <div id='root'>
-    <div id='nav'>
-      <router-link to='/'> Home</router-link>
-      <router-link to='/contact'> Contact </router-link>
+  <div id="root" class="container">
+    <div class="grid-container-nav">
+      <Logo />
+      <Navbar />
+      <div class="empty"></div>
+      <div class="color-mode">
+        <span 
+        @click="colorMode=!colorMode" 
+        v-if="colorMode == true" 
+        class="material-icons dark"
+          >dark_mode</span>
+        <span 
+        @click="colorMode=!colorMode" 
+        v-if="colorMode == false" 
+        class="material-icons light"
+        >light_mode</span>
+      </div>
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
+import './assets/styles/style.scss'
+import Navbar from './components/Navbar.vue'
+import Logo from '../src/components/base/Logo.vue'
 
 export default {
   name: 'App',
+  components: {
+    Navbar,
+    Logo,
+  },
+  data() {
+    var colorMode = true
+    return {
+      colorMode
+    },
+  }
 }
 </script>
 
 <style scoped>
-  #root {
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-  img {
-    width: 200px;
-  }
-  #nav {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-  }
-  a {
-    text-decoration: none;
-    margin: 30px 25px;
-    color: #333;
-  }
-  a:hover {
-    text-decoration: underline;
-    color: black
-  }
 </style>

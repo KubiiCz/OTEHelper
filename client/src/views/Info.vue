@@ -1,5 +1,5 @@
 <template>
-    <div class="grid-container-content contact">
+  <div class="grid-container-content info">
       <Help />
   </div>
 </template>
@@ -9,7 +9,7 @@
 import Help from '../components/Help.vue'
 
 export default {
-  name: 'Contact',
+  name: 'Info',
   components: {
       Help,
   },
@@ -18,3 +18,6 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+</style>

@@ -3,8 +3,7 @@
         <!-- form componenet -->
 
         <form action="#">
-            <input type="text">
-            <span class="material-icons">upload</span>
+            <input type="file">
         </form>
 
         <!-- change compoennt  -->

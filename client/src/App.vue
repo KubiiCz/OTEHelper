@@ -6,15 +6,7 @@
       <div class="empty"></div>
       <div class="color-mode">
         <span 
-        @click="colorMode=!colorMode" 
-        v-if="colorMode == true" 
-        class="material-icons dark"
-          >dark_mode</span>
-        <span 
-        @click="colorMode=!colorMode" 
-        v-if="colorMode == false" 
-        class="material-icons light"
-        >light_mode</span>
+        v-on:click="changeColorMode" class="material-icons">{{materialIcon}}</span>
       </div>
     </div>
     <router-view />
@@ -34,9 +26,24 @@ export default {
   },
   data() {
     var colorMode = true
+    var materialIcon = 'light_mode'
     return {
-      colorMode
-    },
+      colorMode,
+      materialIcon
+    }
+  },
+  methods:{
+    changeColorMode(){
+      if (this.materialIcon === 'light_mode') {
+        this.materialIcon = 'dark_mode'
+        document.body.classList.remove('light_mode')
+        document.body.classList.add(this.materialIcon)
+      } else {
+        this.materialIcon = 'light_mode'
+        document.body.classList.remove('dark_mode')
+        document.body.classList.add(this.materialIcon)
+      }
+    }
   }
 }
 </script>

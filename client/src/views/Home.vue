@@ -2,7 +2,7 @@
     <div class="grid-container-content home">
         <Files />
         <UploadForm />
-        <Help />
+        <TextBox :heading="heading"/>
         <Preview />
     </div>
 </template>
@@ -12,6 +12,7 @@ import Files from '../components/Files.vue'
 import Help from '../components/Help.vue'
 import Preview from '../components/Preview.vue'
 import UploadForm from '../components/UploadForm.vue'
+import TextBox from '../components/TextBox.vue'
 
 import axios from 'axios'
 
@@ -21,12 +22,15 @@ export default {
         Preview,
         Files,
         Help,
+        TextBox,
         UploadForm,
         },
     data(){
         var request = "Request from API"
+        var heading = "Custom text"
         return {
-        request
+        request,
+        heading
         }
     },
     mounted(){

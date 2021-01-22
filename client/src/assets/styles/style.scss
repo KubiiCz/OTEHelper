@@ -113,16 +113,20 @@ p {
 .material-icons {
   font-size: 2.3em;
   text-shadow: 3px 3px 2px $page-background-dark;
+  
 }
 
 a {
   color: $secondary-color;
   text-decoration: none;
+  
 
   &:hover {
     color: $primary-color;
+    transition:all 300ms ease;
   }
 }
+
 
 .router-link-active {
   border-bottom: 5px solid $primary-color;
